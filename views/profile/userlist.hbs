@@ -3,19 +3,31 @@
 <h2 class="pt-3">Friends Awaiting Approval</h2>
 <div id="selected_user" class="list-group">
   {{#each awaiting_approval}}
-  <button type="button" class="list-group-item list-group-item-action">
-    {{this.name}}
-  </button>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <img src="/uploads/images/{{this.image}}" style="height:60px; width:60px;">
+    <h5 class="card-title">{{this.name}}</h5>
+    <p class="card-text">{{this.bio}}</p>
+   </div>
+  </div>
   {{/each}}
-</div>
+
 
 <h2 class="pt-3">Suggested Friends</h2>
 <div id="selected_user" class="list-group">
   {{#each users}}
+   <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <img src="/uploads/images/{{this.image}}" style="height:60px; width:60px;">
+    <h5 class="card-title">{{this.name}}</h5>
+    <p class="card-text">{{this.bio}}</p>
   <form action="/users/addfriend/{{this._id}}" method="post">
-  <button type="submit" class="list-group-item list-group-item-action" name="friendReqId" value="{{this._id}}">
+  <button type="submit" class="btn btn-primary" name="friendReqId" value="{{this._id}}">
     Send {{this.name}} a friend request
   </button>
   </form>
+   </div>
+  </div>
   {{/each}}
-</div>
+
+
