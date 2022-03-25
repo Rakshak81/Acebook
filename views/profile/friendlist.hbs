@@ -1,31 +1,31 @@
 <h1 class="pt-5">All friends</h1>
 
-<h2>Pending friends of {{ name }} </h2>
+<h2 class="pt-3">Pending friends of {{ name }} </h2>
 <div id="selected_user">
   {{#each pending_friends}}
-  <img src=/uploads/images/{{this.image}} style="height:60px; width:60px;">
-  {{this.name}}
-  <form action="/users/acceptfriend/{{this._id}}" method="post">
-    <label for="button">Accept Friend</label>
-    <button type="submit" name="friendAccId" value="{{this._id}}">Accept</button>
-  </form>
-  <br>
-  <form action="/users/rejectfriend/{{this._id}}" method="post">
-    <label for="button">Reject Friend</label>
-    <button type="submit" name="friendRejId" value="{{this._id}}">Reject</button>
-  </form>
-  <br>
+  <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <img src="/uploads/images/{{this.image}}" style="height:60px; width:60px;">
+    <h5 class="card-title">{{this.name}}</h5>
+    <p class="card-text">{{this.bio}}</p>
+    <form action="/users/acceptfriend/{{this._id}}" method="post">
+    <button type="submit" class="btn btn-primary" name="friendAccId" value="{{this._id}}">Accept friend request</button>
+    </form>
+    </div>
+  </div>
   {{/each}}
-<div>
-<h2>Confirmed friends of {{ name }} </h2>
+
+<h2 class="pt-3">Confirmed friends of {{ name }} </h2>
 <div id="selected_user">
   {{#each friends}}
-  <img src=/uploads/images/{{this.image}} style="height:60px; width:60px;">
-  {{this.name}}
-  <form action="/users/deletefriend/{{this._id}}" method="post">
-    <label for="button">Delete Friend</label>
-    <button type="submit" name="friendDelId" value="{{this._id}}">Delete</button>
-  </form>
-  <br>
+  <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <img src="/uploads/images/{{this.image}}" style="height:60px; width:60px;">
+    <h5 class="card-title">{{this.name}}</h5>
+    <p class="card-text">{{this.bio}}</p>
+    <form action="/users/deletefriend/{{this._id}}" method="post">
+    <button type="submit" class="btn btn-primary" name="friendDelId" value="{{this._id}}">Remove from friends</button>
+    </form>
+    </div>
+  </div>
   {{/each}}
-<div>
