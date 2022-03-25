@@ -64,8 +64,13 @@ const sessionChecker = (req, res, next) => {
   }
 };
 
+const homePageCheck = (req, res, next) => {
+  res.locals.home = true;
+  next();
+}
+
 // route setup
-app.use("/", homeRouter);
+app.use("/", homePageCheck, homeRouter);
 app.use("/posts", sessionChecker, postsRouter);
 app.use("/sessions", sessionsRouter);
 app.use("/users", usersRouter);
