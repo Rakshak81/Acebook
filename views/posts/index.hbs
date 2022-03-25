@@ -13,7 +13,7 @@
      <form action="/profile/viewperson/{{this.user._id}}" method="post">
       <button class="btn btn-link" name="userId" value="{{this.user._id}}">{{this.user.name}}</button>
     </form>
-    <small class="text-muted" id="createdAt">, on {{this.postedAt}}</small></h5>
+    <small class="text-muted" id="createdAt"> on {{this.postedAt}}</small></h5>
    <p class="lead card-text">{{this.message}}</p>
 
   <form action="/posts/like/{{this._id}}" method="post" id = "like_{{this._id}}">
