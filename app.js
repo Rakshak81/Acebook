@@ -57,9 +57,11 @@ app.use((req, res, next) => {
 const sessionChecker = (req, res, next) => {
   if (!req.session.user && !req.cookies.user_sid) {
     res.locals.loggedIn = false;
+    res.locals.home = false;
     res.redirect("/sessions/new");
   } else {
     res.locals.loggedIn = true;
+    res.locals.home = false;
     next();
   }
 };
