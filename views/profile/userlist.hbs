@@ -1,25 +1,21 @@
-<h1 class="pt-5">Current User {{ name }} </h1>
+<h1 class="pt-5">Currently logged in as {{ name }} </h1>
 
-<h2>Awaiting Approval</h2>
-<div id="selected_user">
+<h2>Friends Awaiting Approval</h2>
+<div id="selected_user" class="list-group">
   {{#each awaiting_approval}}
-  {{this.name}}
-  <br>
+  <button type="button" class="list-group-item list-group-item-action">
+    {{this.name}}
+  </button>
   {{/each}}
-<div>
+</div>
 
 <h2>Suggested Friends</h2>
-<div id="selected_user">
+<div id="selected_user" class="list-group">
   {{#each users}}
   <form action="/users/addfriend/{{this._id}}" method="post">
-    <label for="button">Friend Request</label>
-    <button type="submit" class="list-user-item list-user-item-action" name="friendReqId" value="{{this._id}}">{{this.name}}</button>
+  <button type="submit" class="list-group-item list-group-item-action" name="friendReqId" value="{{this._id}}">
+    Send {{this.name}} a friend request
+  </button>
   </form>
-
-  </div> 
-  <br>
   {{/each}}
-<div>
-
-
-<a class="view-profile-link" href="/profile">Profile</a>
+</div>

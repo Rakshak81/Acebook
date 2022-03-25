@@ -21,8 +21,11 @@
   <div class="card-body">
     <img src="/uploads/images/{{this.image}}" style="height:60px; width:60px;">
     <h5 class="card-title">{{this.name}}</h5>
-    <p class="card-text">A good friend.</p>
-    <a href="#" class="btn btn-primary">Visit profile</a>
+    <p class="card-text">{{this.bio}}</p>
+    {{!-- <form action="/profile/viewperson/{{this.user._id}}" method="post">
+    <input type="hidden">
+    <button class="btn btn-primary" name="userId" >Visit profile</button>
+    </form>     --}}
     <a href="/profile/friendlist" class="btn btn-primary">View all friends</a>
   </div>
 </div>
