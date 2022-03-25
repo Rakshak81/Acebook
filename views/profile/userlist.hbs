@@ -1,6 +1,6 @@
 <h1 class="pt-5">Currently logged in as {{ name }} </h1>
 
-<h2>Friends Awaiting Approval</h2>
+<h2 class="pt-3">Friends Awaiting Approval</h2>
 <div id="selected_user" class="list-group">
   {{#each awaiting_approval}}
   <button type="button" class="list-group-item list-group-item-action">
@@ -9,7 +9,7 @@
   {{/each}}
 </div>
 
-<h2>Suggested Friends</h2>
+<h2 class="pt-3">Suggested Friends</h2>
 <div id="selected_user" class="list-group">
   {{#each users}}
   <form action="/users/addfriend/{{this._id}}" method="post">
