@@ -1,0 +1,18 @@
+<img src="/uploads/images/{{this.image}}" class="img-thumbnail rounded float-start">
+  <div class="updateProfile">
+    <div class="row">
+      <div>
+          <div class="input-group mb-3">
+          <label for="name" class="input-group-text" id="basic-addon1">Name: </label>
+          <input readonly id="name" class="form-control" aria-describedby="basic-addon1" type="text" name="name" value="{{name}}">
+          </div>
+          <div class="input-group mb-3">
+          <label for="bio" class="input-group-text" id="basic-addon1">Bio: </label>
+          <input readonly id="bio" class="form-control" aria-describedby="basic-addon1" type="text" name="bio" value="{{bio}}"><br>
+          </div>
+      </div>
+    </div>
+
+      {{#if messages}}
+          {{messages}}
+      {{/if}}

@@ -3,8 +3,7 @@
 {{#if self}}
   {{> profile}}
 {{else}}
-  {{name}}
-  {{bio}}
+  {{> others}} 
 {{/if}}
 
 <div class="card" style="width: 60rem;">
@@ -31,7 +30,11 @@
   {{/each}}
 </div>
 <div class="posts pt-3" >
+  {{#if self}}
   <h2 class="pt-3">My posts</h2>
+  {{else}}
+  <h2 class="pt-3">{{name}}'s posts</h2>
+  {{/if}}
   {{#each posts}}
   <div class="card w-50">
     {{#if this.imagePath}}
