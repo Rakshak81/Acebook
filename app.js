@@ -6,6 +6,7 @@ const logger = require("morgan");
 const session = require("express-session");
 const methodOverride = require("method-override");
 const hbs = require('hbs');
+const hbshelpers = require('handlebars-helpers')();
 
 const homeRouter = require("./routes/home");
 const postsRouter = require("./routes/posts");
@@ -21,6 +22,7 @@ const flash = require('connect-flash');
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
 hbs.registerPartials('./views/partials');
+hbs.registerHelper(hbshelpers);
 
 app.use(logger("dev"));
 app.use(express.json());

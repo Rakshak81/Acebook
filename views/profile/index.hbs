@@ -37,7 +37,11 @@
   {{/if}}
   <div class="card-body">
     <img src="/uploads/images/{{this.user.image}}" style="height:60px; width:60px;">
-    <h5 class="card-title"><a href="/profile/viewperson/{{this.user._id}}">{{this.user.name}}</a><small class="text-muted" id="createdAt">, on {{this.postedAt}}</small></h5>
+    <h5 class="card-title">
+     <form action="/profile/viewperson/{{this.user._id}}" method="post">
+      <button class="btn btn-link" name="userId" value="{{this.user._id}}">{{this.user.name}}</button>
+    </form>
+    <small class="text-muted" id="createdAt"> on {{this.postedAt}}</small></h5>
    <p class="lead card-text">{{this.message}}</p>
   <form action="/posts/like/{{this._id}}" method="post" id = "like_{{this._id}}">
     <input type="hidden" name="prevRoute" value="posts">
